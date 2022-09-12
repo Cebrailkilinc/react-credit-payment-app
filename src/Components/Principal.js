@@ -1,21 +1,14 @@
-import Form from 'react-bootstrap/Form';
 import React, { useState } from 'react';
-
-import "../style/principal.css"
 
 
 function Principal() {
-    const [value, setValue] = useState(1000);
-    return (
-        <>
-            <Form.Group className="mb-3 mt-3" controlId="formGroupEmail">
-                <Form.Label className='principal-from-label' >Kredi Miktarı</Form.Label>
-                <Form.Control value={value} onChange={(e)=>{setValue(e.target.value)}} id='deneme' className='principal-from-control mt-3' type="number" placeholder="Kredi Miktarını giriniz..." />                
-                <Form.Range onChange={(e)=>{setValue(e.target.value)}} id='range-slider' className='principal-range-slider mt-3' />
-            </Form.Group>         
-       
 
-        </>
+    return (
+        <div className='mt-10 sm:mt-16 flex flex-col '>
+            <h1 className='font-semibold'>Ana Para</h1>
+            <input type="number" placeholder='Kredi Miktarı' className='border h-12 p-2  w-28 sm:w-56   my-2 sm:my-5 focus:outline-none'/>           
+            <input type="range" className='w-80 sm:w-96 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer '/>         
+        </div>
     )
 }
 
