@@ -1,30 +1,38 @@
-import React from 'react'
-import { useState } from 'react'
+import { useContext, useState, useRef } from 'react'
+import Select from 'react-select'
+
+//Context
+import DataContext from "../Context/DataContext"
 
 function PaymentRange() {
+    const {odemeAraligi, setOdemeAraligi } = useContext(DataContext)
 
-    const [dropDownDisplay, setDropDownDisplay] = useState("hidden")
+    const options = [
+        { value: 'haftalık', label: 'haftalık' },
+        { value: 'aylık', label: 'aylık' },
+        { value: 'yıllık', label: 'yıllık' }
+    ]
 
-    //Dropdown_Controll_State
-    const handleDropDownDisplay = () => {
-        if (dropDownDisplay == "hidden") {
-            setDropDownDisplay("")
+    const handleChange =(selectOption)=>{
+        if (selectOption.value == "aylık") {
+            setOdemeAraligi(30)
+            
+        } else if (selectOption.value == "yıllık") {
+            setOdemeAraligi(365)
         }else{
-            setDropDownDisplay("hidden")
-        }
-    }
+            setOdemeAraligi(7)
+        }      
+     
+    } 
 
     return (
         <>
-            <div>
-                <input onClick={handleDropDownDisplay} type="text" placeholder='Ödeme aralığı' className='border h-12 p-2  w-28   focus:outline-none lg:ml-4 mt-6 ' />
-                <ul className={`top-[400px] left-[43px] sm:left-[360px] absolute bg-slate-100  ${dropDownDisplay}`}>
-                    <li  className='cursor-pointer hover:bg-slate-200 px-6 py-1' >deneme</li>
-                    <li  className='cursor-pointer hover:bg-slate-200 px-6 py-1'>deneme</li>
-                    <li  className='cursor-pointer hover:bg-slate-200 px-6 py-1'>deneme</li>
-                </ul>            
+            <div className='flex flex-col '>
+                <h1 className='font-semibold'>Kâr Oranı</h1>
+                <div>
+                    <Select options={options}  onChange={handleChange}/>
+                </div>
             </div>
-
         </>
     )
 }
