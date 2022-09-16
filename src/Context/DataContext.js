@@ -6,20 +6,23 @@ export const DataProvider = ({children})=>{
 
 
     //Ana_Para
-    const [getAnaPara, setgetAnaPara] = useState(null)
+    const [getAnaPara, setgetAnaPara] = useState("")
 
     //Kar_Oranı
-    const [karOranı, setKarOranı] = useState(null)
+    const [karOranı, setKarOranı] = useState("")
 
     //Vade_Sayısı
-    const [vadeSayisi, setVadeSayisi] = useState(null)
+    const [vadeSayisi, setVadeSayisi] = useState("")
 
     //Vergi_Oranı
-    const [bsmv, setBsmv] = useState(null)
-    const [kkdf, setKkdf] = useState(null)
+    const [bsmv, setBsmv] = useState("")
+    const [kkdf, setKkdf] = useState("")
 
     //Ödeme_Aralığı
-    const [odemeAraligi, setOdemeAraligi] = useState(null)
+    const [odemeAraligi, setOdemeAraligi] = useState("")
+
+    //Earning type
+    const [earningType, setEarningType] = useState("")
 
     const [tableData, setTableData] = useState([])
 
@@ -33,7 +36,7 @@ export const DataProvider = ({children})=>{
         bsmv, setBsmv,
         kkdf, setKkdf,
         tableData, setTableData,
-        odemeAraligi, setOdemeAraligi
+        odemeAraligi, setOdemeAraligi,earningType, setEarningType
         
 
     }

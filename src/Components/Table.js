@@ -10,32 +10,32 @@ function Table() {
         <div className="overflow-x-auto relative mt-20 ">
 
             <table className="w-full text-sm text-left text-gray-400 dark:text-white">
-                {  
-                    <thead  className="text-xs text-gray-700 uppercase bg-white dark:bg-gray-500 dark:text-white">
-                        <tr>
-                            <th scope="col" className="py-3 px-6">
-                                Taksit No
-                            </th>
-                            <th scope="col" className="py-3 px-6">
-                                Taksit Tutarı
-                            </th>
-                            <th scope="col" className="py-3 px-6">
-                                Anapara
-                            </th>
-                            <th scope="col" className="py-3 px-6">
-                                Kalan Anapara
-                            </th>
-                            <th scope="col" className="py-3 px-6">
-                                Kar Tutarı
-                            </th>
-                            <th scope="col" className="py-3 px-6">
-                                KKDF
-                            </th>
-                            <th scope="col" className="py-3 px-6">
-                                bsmv
-                            </th>
-                        </tr>
-                    </thead> 
+                {  tableData.length > 0 ?
+                     <thead  className="text-xs text-gray-700 uppercase bg-white dark:bg-gray-500 dark:text-white">
+                         <tr>
+                             <th scope="col" className="py-3 px-6">
+                                 Taksit No
+                             </th>
+                             <th scope="col" className="py-3 px-6">
+                                 Taksit Tutarı
+                             </th>
+                             <th scope="col" className="py-3 px-6">
+                                 Anapara
+                             </th>
+                             <th scope="col" className="py-3 px-6">
+                                 Kalan Anapara
+                             </th>
+                             <th scope="col" className="py-3 px-6">
+                                 Kar Tutarı
+                             </th>
+                             <th scope="col" className="py-3 px-6">
+                                 KKDF
+                             </th>
+                             <th scope="col" className="py-3 px-6">
+                                 bsmv
+                             </th>
+                         </tr>
+                     </thead>  : null
                 }
                 <tbody>
 

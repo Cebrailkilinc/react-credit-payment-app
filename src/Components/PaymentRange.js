@@ -21,15 +21,15 @@ function PaymentRange() {
             setOdemeAraligi(365)
         }else{
             setOdemeAraligi(7)
-        }      
+        }     
      
     } 
 
     return (
         <>
             <div className='flex flex-col '>
-                <h1 className='font-semibold'>Kâr Oranı</h1>
-                <div>
+                <h1 className='font-semibold'>Ödeme Aralığı</h1>
+                <div className='my-1 sm:mt-1'>
                     <Select options={options}  onChange={handleChange}/>
                 </div>
             </div>
