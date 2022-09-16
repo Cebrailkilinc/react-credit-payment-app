@@ -4,34 +4,25 @@ import { useContext } from 'react'
 import DataContext from '../Context/DataContext'
 
 function EarningType() {
-    const {earningType, setEarningType} = useContext(DataContext)
+    const { earningType, setEarningType } = useContext(DataContext)
 
-    const handleEarningType =(selectOption)=>{
+    const handleEarningType = (selectOption) => {
         if (selectOption.value == "Basit") {
-            setEarningType("Basit")            
+            setEarningType("Basit")
 
-        }else{
+        } else {
             setEarningType("Bilesik")
-        }   
-        
-        console.log(selectOption)
-     
-    } 
+        }
 
-   
-    
-      
-    
+        console.log(selectOption)
+
+    }
 
     const options = [
         { value: 'Basit', label: 'Basit' },
-        { value: 'Bileşik', label: 'Bileşik' }        
+        { value: 'Bileşik', label: 'Bileşik' }
     ]
-
-   
-
     
-
     return (
         <>
             <div className='flex flex-col '>
