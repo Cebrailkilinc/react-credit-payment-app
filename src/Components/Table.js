@@ -1,10 +1,10 @@
 import { useContext, useState } from 'react'
-import DataContext from "../Context/DataContext"
+import CalculateContext from '../Context/CalculateContext'
 
 
 function Table() {
 
-    const { tableData, setTableData } = useContext(DataContext)
+    const { tableData, setTableData } = useContext(CalculateContext)
 
     return (
         <div className="overflow-x-auto relative mt-20 ">

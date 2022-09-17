@@ -8,6 +8,7 @@ import Table from './Table'
 import Tax from './Tax'
 
 import DataContext from '../Context/DataContext'
+import CalculateContext from '../Context/CalculateContext'
 import { useEffect } from 'react'
 import EarningType from './EarningType'
 
@@ -17,8 +18,10 @@ function Layout() {
 
   const {
     karOranı, setKarOranı, vadeSayisi, setVadeSayisi, setgetAnaPara,
-    getAnaPara, bsmv, setBsmv, kkdf, setKkdf, tableData, setTableData,odemeAraligi, setOdemeAraligi,earningType, setEarningType
+    getAnaPara, bsmv, setBsmv, kkdf, setKkdf,odemeAraligi, setOdemeAraligi,earningType, setEarningType
   } = useContext(DataContext)
+
+  const { tableData, setTableData} = useContext(CalculateContext)
 
 
   const karYuzdesi = karOranı*(odemeAraligi/30) / 100;

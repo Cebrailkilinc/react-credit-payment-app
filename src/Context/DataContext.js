@@ -24,7 +24,7 @@ export const DataProvider = ({children})=>{
     //Earning type
     const [earningType, setEarningType] = useState("")
 
-    const [tableData, setTableData] = useState([])
+   
 
     const values = {
         setgetAnaPara,
@@ -34,8 +34,7 @@ export const DataProvider = ({children})=>{
         vadeSayisi,
         setVadeSayisi,
         bsmv, setBsmv,
-        kkdf, setKkdf,
-        tableData, setTableData,
+        kkdf, setKkdf,      
         odemeAraligi, setOdemeAraligi,earningType, setEarningType
         
 
