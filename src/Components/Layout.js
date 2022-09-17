@@ -20,7 +20,6 @@ function Layout() {
     karOranı, setKarOranı, vadeSayisi, setVadeSayisi, setgetAnaPara,
     getAnaPara, bsmv, setBsmv, kkdf, setKkdf,odemeAraligi, setOdemeAraligi,earningType, setEarningType
   } = useContext(DataContext)
-
   const { tableData, setTableData} = useContext(CalculateContext)
 
 
@@ -41,17 +40,13 @@ function Layout() {
 
     for (let index = 1; index < Number(vadeSayisi) + Number(1); index++) {
 
-      let karTutari = anaPara * karYuzdesi     
+      let karTutari = anaPara * karYuzdesi   
+      console.log(karYuzdesi)  
       
       if (earningType == "Bilesik") {
-       karTutari = (anaPara*(Math.pow((1 + karYuzdesi),(vadeSayisi)))) - anaPara 
-        console.log("su an burdayim")
+       karTutari = (anaPara*(Math.pow((1 + karYuzdesi),(vadeSayisi)))) - anaPara        
       }
 
-      let karTutari2 = (anaPara*(Math.pow((2.28),(odemeAraligi/30)))) - anaPara 
-
-      
-      console.log((Math.pow((2.28),(odemeAraligi/30))))
 
       let kkdfTutari = karTutari * kkdfYuzdesi;
 
