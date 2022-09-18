@@ -17,45 +17,45 @@ import EarningType from './EarningType'
 function Layout() {
 
   const {
-    karOranı, setKarOranı, vadeSayisi, setVadeSayisi, setgetAnaPara,
-    getAnaPara, bsmv, setBsmv, kkdf, setKkdf,odemeAraligi, setOdemeAraligi,earningType, setEarningType
+    earningRate, setEarningRate, numberOfMaturity, setNumberOfMaturity, setgetPrincipal,
+    getPrincipal, bsmv, setBsmv, kkdf, setKkdf,paymentRange, setPaymentRange,earningType, setEarningType
   } = useContext(DataContext)
   const { tableData, setTableData} = useContext(CalculateContext)
 
+  // Calculate some value
+  const earningPercentage = earningRate*(paymentRange/30) / 100;
+  const bsmvPercentage = bsmv / 100;
+  const kkdfPercentage = kkdf / 100;
+  const i = earningPercentage * (1 + kkdfPercentage+ bsmvPercentage)
 
-  const karYuzdesi = karOranı*(odemeAraligi/30) / 100;
-  const bsmvYuzdesi = bsmv / 100;
-  const kkdfYuzdesi = kkdf / 100;
-  const i = karYuzdesi * (1 + kkdfYuzdesi + bsmvYuzdesi)
-
-  const aylikTaksit = (getAnaPara * ((Math.pow(1 + i, vadeSayisi) * i) / (Math.pow(1 + i, vadeSayisi) - 1)));
+  const montlyInstallment = (getPrincipal * ((Math.pow(1 + i, numberOfMaturity) * i) / (Math.pow(1 + i, numberOfMaturity) - 1)));
 
  
-
+  
   const table = []
 
   const calculate = () => {   
 
-    let anaPara = getAnaPara
+    let principal = getPrincipal
 
-    for (let index = 1; index < Number(vadeSayisi) + Number(1); index++) {
+    for (let index = 1; index < Number(numberOfMaturity) + Number(1); index++) {
 
-      let karTutari = anaPara * karYuzdesi   
-      console.log(karYuzdesi)  
+      let earningAmount = principal * earningPercentage   
+      console.log(earningPercentage)  
       
       if (earningType == "Bilesik") {
-       karTutari = (anaPara*(Math.pow((1 + karYuzdesi),(vadeSayisi)))) - anaPara        
+       earningAmount = (principal*(Math.pow((1 + earningPercentage),(numberOfMaturity)))) - principal       
       }
 
 
-      let kkdfTutari = karTutari * kkdfYuzdesi;
+      let kkdfAmount = earningAmount * kkdfPercentage;
 
-      let bsmvTutari = karTutari * bsmvYuzdesi;
+      let bsmvAmount = earningAmount * bsmvPercentage;
 
-      let aylikAnaPara = aylikTaksit - (karTutari + kkdfTutari + bsmvTutari);
-      anaPara -= aylikAnaPara
+      let montlyPrincipal = montlyInstallment - (earningAmount + kkdfAmount + bsmvAmount);
+      principal -= montlyPrincipal
     
-     table.push({ taksitNo: index, aylikTaksit:aylikTaksit, karTutari, aylikAnaPara: aylikAnaPara, anaPara: anaPara, karTutari: karTutari, kkdfTutari: kkdfTutari, bsmvTutari: bsmvTutari })
+     table.push({ installmentNo: index, montlyInstallment:montlyInstallment, earningAmount, montlyPrincipal: montlyPrincipal, principal: principal, earningAmount: earningAmount, kkdfAmount: kkdfAmount, bsmvAmount: bsmvAmount })
     }  
     setTableData(table)
    

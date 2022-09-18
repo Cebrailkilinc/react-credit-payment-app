@@ -44,25 +44,25 @@ function Table() {
                             return (
                                 <tr key={i} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 justify-center">
                                     <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        {item.taksitNo}
+                                        {item.installmentNo}
                                     </th>
                                     <td className="py-4 px-6">
-                                        {item.aylikTaksit.toFixed(2)}
+                                        {item.montlyInstallment.toFixed(2)}
                                     </td>
                                     <td className="py-4 px-6">
-                                        {item.aylikAnaPara.toFixed(2)}
+                                        {item.montlyPrincipal.toFixed(2)}
                                     </td>
                                     <td className="py-4 px-6">
-                                        {item.anaPara.toFixed(2)}
+                                        {item.principal.toFixed(2)}
                                     </td>
                                     <td className="py-4 px-6">
-                                        {item.karTutari.toFixed(2)}
+                                        {item.earningAmount.toFixed(2)}
                                     </td>
                                     <td className="py-4 px-6">
-                                        {item.kkdfTutari.toFixed(2)}
+                                        {item.kkdfAmount.toFixed(2)}
                                     </td>
                                     <td className="py-4 px-6">
-                                        {item.bsmvTutari.toFixed(2)}
+                                        {item.bsmvAmount.toFixed(2)}
                                     </td>
                                 </tr>
                             )

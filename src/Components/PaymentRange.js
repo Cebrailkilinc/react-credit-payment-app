@@ -5,7 +5,7 @@ import Select from 'react-select'
 import DataContext from "../Context/DataContext"
 
 function PaymentRange() {
-    const {odemeAraligi, setOdemeAraligi } = useContext(DataContext)
+    const {paymentRange, setPaymentRange } = useContext(DataContext)
 
     const options = [
         { value: 'haftalık', label: 'haftalık' },
@@ -15,12 +15,12 @@ function PaymentRange() {
 
     const handleChange =(selectOption)=>{
         if (selectOption.value == "aylık") {
-            setOdemeAraligi(30)
+            setPaymentRange (30)
             
         } else if (selectOption.value == "yıllık") {
-            setOdemeAraligi(365)
+            setPaymentRange (365)
         }else{
-            setOdemeAraligi(7)
+            setPaymentRange (7)
         }     
      
     } 
