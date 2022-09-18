@@ -3,6 +3,7 @@ import DataContext from "../Context/DataContext"
 
 function EarningRate() {
 
+    
     const { earningRate, setEarningRate } = useContext(DataContext)
 
     return (

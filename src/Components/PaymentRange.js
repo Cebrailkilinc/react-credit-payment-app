@@ -13,16 +13,16 @@ function PaymentRange() {
         { value: 'yıllık', label: 'yıllık' }
     ]
 
+    //This function for select intallment range
     const handleChange =(selectOption)=>{
-        if (selectOption.value == "aylık") {
-            setPaymentRange (30)
-            
-        } else if (selectOption.value == "yıllık") {
+        if (selectOption.value === "aylık") {
+            setPaymentRange (30)            
+        } else if (selectOption.value === "yıllık") {
             setPaymentRange (365)
         }else{
             setPaymentRange (7)
-        }     
-     
+        }
+
     } 
 
     return (

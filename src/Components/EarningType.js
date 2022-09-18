@@ -6,8 +6,9 @@ import DataContext from '../Context/DataContext'
 function EarningType() {
     const { earningType, setEarningType } = useContext(DataContext)
 
+    // this function chooses earning type
     const handleEarningType = (selectOption) => {
-        if (selectOption.value == "Basit") {
+        if (selectOption.value === "Basit") {
             setEarningType("Basit")
 
         } else {
@@ -15,7 +16,6 @@ function EarningType() {
         }
 
         console.log(selectOption)
-
     }
 
     const options = [

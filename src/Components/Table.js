@@ -1,10 +1,10 @@
-import { useContext, useState } from 'react'
+import { useContext,} from 'react'
 import CalculateContext from '../Context/CalculateContext'
 
 
 function Table() {
 
-    const { tableData, setTableData } = useContext(CalculateContext)
+    const { tableData,} = useContext(CalculateContext)
 
     return (
         <div className="overflow-x-auto relative mt-20 ">
@@ -38,7 +38,6 @@ function Table() {
                      </thead>  : null
                 }
                 <tbody>
-
                     {
                         tableData.map((item, i) => {
                             return (

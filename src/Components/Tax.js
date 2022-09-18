@@ -4,7 +4,7 @@ import {useContext, useState} from 'react'
 import DataContext from "../Context/DataContext"
 
 function Tax() {
-    const { bsmv, setBsmv, kkdf, setKkdf} = useContext(DataContext)     
+    const {setBsmv,setKkdf} = useContext(DataContext)     
 
     return (
         <div className=' flex flex-col lg:mr-36'>

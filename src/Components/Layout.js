@@ -17,34 +17,40 @@ import EarningType from './EarningType'
 function Layout() {
 
   const {
-    earningRate, setEarningRate, numberOfMaturity, setNumberOfMaturity, setgetPrincipal,
-    getPrincipal, bsmv, setBsmv, kkdf, setKkdf,paymentRange, setPaymentRange,earningType, setEarningType
+    earningRate,
+    numberOfMaturity,
+    getPrincipal,
+    bsmv,
+    kkdf,
+    paymentRange,
+    earningType
   } = useContext(DataContext)
-  const { tableData, setTableData} = useContext(CalculateContext)
+  const {setTableData } = useContext(CalculateContext)
 
   // Calculate some value
-  const earningPercentage = earningRate*(paymentRange/30) / 100;
+  const earningPercentage = earningRate * (paymentRange / 30) / 100; 
   const bsmvPercentage = bsmv / 100;
   const kkdfPercentage = kkdf / 100;
-  const i = earningPercentage * (1 + kkdfPercentage+ bsmvPercentage)
+  const i = earningPercentage * (1 + kkdfPercentage + bsmvPercentage)
 
   const montlyInstallment = (getPrincipal * ((Math.pow(1 + i, numberOfMaturity) * i) / (Math.pow(1 + i, numberOfMaturity) - 1)));
 
- 
-  
+
+ //  I created empty array for added table values
   const table = []
 
-  const calculate = () => {   
+  const calculate = () => {
 
+    //I assigned the value I got from "getPrincipal " to "principal" variable.
     let principal = getPrincipal
 
     for (let index = 1; index < Number(numberOfMaturity) + Number(1); index++) {
 
-      let earningAmount = principal * earningPercentage   
-      console.log(earningPercentage)  
-      
-      if (earningType == "Bilesik") {
-       earningAmount = (principal*(Math.pow((1 + earningPercentage),(numberOfMaturity)))) - principal       
+      let earningAmount = principal * earningPercentage
+      console.log(earningPercentage)
+
+      if (earningType === "Bilesik") {
+        earningAmount = (principal * (Math.pow((1 + earningPercentage), (numberOfMaturity)))) - principal
       }
 
 
@@ -54,11 +60,12 @@ function Layout() {
 
       let montlyPrincipal = montlyInstallment - (earningAmount + kkdfAmount + bsmvAmount);
       principal -= montlyPrincipal
-    
-     table.push({ installmentNo: index, montlyInstallment:montlyInstallment, earningAmount, montlyPrincipal: montlyPrincipal, principal: principal, earningAmount: earningAmount, kkdfAmount: kkdfAmount, bsmvAmount: bsmvAmount })
-    }  
+
+      // Added all values to table values
+      table.push({ installmentNo: index, montlyInstallment: montlyInstallment, earningAmount, montlyPrincipal: montlyPrincipal, principal: principal, earningAmount: earningAmount, kkdfAmount: kkdfAmount, bsmvAmount: bsmvAmount })
+    }
     setTableData(table)
-   
+
   }
 
   return (
@@ -72,8 +79,7 @@ function Layout() {
         <div className='flex  items-center justify-around  sm:justify-between mt-5 '>
           <div className='sm:flex items-center gap-x-2'>
             <EarningRate />
-            <EarningType/>                
-
+            <EarningType />
           </div>
           <div className='sm:flex items-center justify-around'>
             <Tax />
@@ -84,11 +90,11 @@ function Layout() {
           <button onClick={calculate} className=" w-40 h-12 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Hesapla
           </button>
-        </div>     
+        </div>
         <div>
           <Table/>
-        </div>    
-       </div>
+        </div>
+      </div>
     </div>
 
   )

@@ -7,9 +7,6 @@ import DataContext from "../Context/DataContext"
 function Principal() {
     const { getPrincipal, setgetPrincipal } = useContext(DataContext)  
     
-    const principalRef = useRef()
-    
-
     return (
         <div className='mt-10 sm:mt-16 flex flex-col '>
             <h1 className='font-semibold'>Ana Para</h1>
