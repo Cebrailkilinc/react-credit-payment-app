@@ -1,5 +1,5 @@
 
-### Credit Payment App
+# Credit Payment App
 In this project, you can create the repayment plan of your loans.
 
 ### Used in this project:
