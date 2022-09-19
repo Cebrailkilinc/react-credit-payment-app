@@ -4,7 +4,12 @@ In this project, you can create the repayment plan of your loans.
 
 ### Used in this project:
 
-In the project directory, you can run:
+* Item 1
+   * Sub item A
+   * Sub item B
+* Item 2
+   * Sub item A
+   * Sub item B
 
 ### `npm start`
 
