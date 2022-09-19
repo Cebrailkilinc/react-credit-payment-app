@@ -4,9 +4,9 @@ In this project, you can create the repayment plan of your loans.
 
 ### Used in this project:
 
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
+First Header  | 
+------------- | 
+Content Cell  |
 Content Cell 
 
 ### `npm start`
