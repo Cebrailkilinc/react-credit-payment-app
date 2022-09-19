@@ -7,6 +7,9 @@ In this project, you can create the repayment plan of your loans.
 
 ## Another image from the project
 
+![image](https://user-images.githubusercontent.com/87018423/191007311-1f167178-de65-4a6e-8b3e-fe7e47655142.png)
+
+
 
 ## Used in this project:
 
