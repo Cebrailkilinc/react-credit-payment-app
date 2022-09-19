@@ -6,10 +6,8 @@ import PaymentRange from './PaymentRange'
 import Principal from './Principal'
 import Table from './Table'
 import Tax from './Tax'
-
 import DataContext from '../Context/DataContext'
 import CalculateContext from '../Context/CalculateContext'
-import { useEffect } from 'react'
 import EarningType from './EarningType'
 
 
@@ -25,7 +23,7 @@ function Layout() {
     paymentRange,
     earningType
   } = useContext(DataContext)
-  const {setTableData } = useContext(CalculateContext)
+  const {dataOfTable, setDataOfTable } = useContext(CalculateContext)
 
   // Calculate some value
   const earningPercentage = earningRate * (paymentRange / 30) / 100; 
@@ -33,6 +31,8 @@ function Layout() {
   const kkdfPercentage = kkdf / 100;
   const i = earningPercentage * (1 + kkdfPercentage + bsmvPercentage)
 
+
+  // Calculete montly installment
   const montlyInstallment = (getPrincipal * ((Math.pow(1 + i, numberOfMaturity) * i) / (Math.pow(1 + i, numberOfMaturity) - 1)));
 
 
@@ -64,7 +64,8 @@ function Layout() {
       // Added all values to table values
       table.push({ installmentNo: index, montlyInstallment: montlyInstallment, earningAmount, montlyPrincipal: montlyPrincipal, principal: principal, earningAmount: earningAmount, kkdfAmount: kkdfAmount, bsmvAmount: bsmvAmount })
     }
-    setTableData(table)
+
+    setDataOfTable(table)
 
   }
 

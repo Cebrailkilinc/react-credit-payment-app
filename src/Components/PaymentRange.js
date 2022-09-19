@@ -1,11 +1,11 @@
-import { useContext, useState, useRef } from 'react'
+import { useContext} from 'react'
 import Select from 'react-select'
 
 //Context
 import DataContext from "../Context/DataContext"
 
 function PaymentRange() {
-    const {paymentRange, setPaymentRange } = useContext(DataContext)
+    const {setPaymentRange } = useContext(DataContext)
 
     const options = [
         { value: 'haftalık', label: 'haftalık' },

@@ -3,13 +3,13 @@ import { createContext, useState } from "react";
 const CalculateContext = createContext()
 
 export const CalculateProvider = ({children})=>{
-    const [tableData, setTableData] = useState([])
-
+    const [dataOfTable, setDataOfTable] = useState([])
 
     const values = {
-      tableData, setTableData
+      dataOfTable, setDataOfTable
        
     }
+    
     return <CalculateContext.Provider value={values}  >{children}</CalculateContext.Provider>
 
 

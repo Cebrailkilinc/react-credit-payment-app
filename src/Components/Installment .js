@@ -1,6 +1,4 @@
 import {useContext} from 'react'
-
-//Context
 import DataContext from "../Context/DataContext"
 
 

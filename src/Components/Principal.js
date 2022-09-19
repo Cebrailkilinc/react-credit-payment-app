@@ -1,8 +1,5 @@
 import {useContext, useRef} from 'react'
-
-//Context
 import DataContext from "../Context/DataContext"
-
 
 function Principal() {
     const { getPrincipal, setgetPrincipal } = useContext(DataContext)  

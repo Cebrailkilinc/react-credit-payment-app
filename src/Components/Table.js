@@ -4,13 +4,13 @@ import CalculateContext from '../Context/CalculateContext'
 
 function Table() {
 
-    const { tableData,} = useContext(CalculateContext)
+    const { dataOfTable, setDataOfTable} = useContext(CalculateContext)
 
     return (
         <div className="overflow-x-auto relative mt-20 ">
 
             <table className="w-full text-sm text-left text-gray-400 dark:text-white">
-                {  tableData.length > 0 ?
+                {  dataOfTable.length > 0 ?
                      <thead  className="text-xs text-gray-700 uppercase bg-white dark:bg-gray-500 dark:text-white">
                          <tr>
                              <th scope="col" className="py-3 px-6">
@@ -39,7 +39,7 @@ function Table() {
                 }
                 <tbody>
                     {
-                        tableData.map((item, i) => {
+                        dataOfTable.map((item, i) => {
                             return (
                                 <tr key={i} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 justify-center">
                                     <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">

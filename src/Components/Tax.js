@@ -1,9 +1,8 @@
 import {useContext, useState} from 'react'
-
-//Context
 import DataContext from "../Context/DataContext"
 
 function Tax() {
+    
     const {setBsmv,setKkdf} = useContext(DataContext)     
 
     return (
