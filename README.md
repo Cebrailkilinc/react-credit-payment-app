@@ -1,8 +1,8 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### `Credit Payment App`
+In this project, you can create the repayment plan of your loans.
 
-## Available Scripts
+### `Used in this project:`
 
 In the project directory, you can run:
 
